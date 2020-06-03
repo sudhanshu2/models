@@ -233,8 +233,8 @@ def get_imagenet_vars_to_restore(imagenet_ckpt):
 
 def format_number(n):
   """Formats number with thousands commas."""
-  locale.setlocale(locale.LC_ALL, 'en_US')
-  return locale.format('%d', n, grouping=True)
+  # locale.setlocale(locale.LC_ALL, 'en_US')
+  return str(n)
 
 
 def atoi(text):
