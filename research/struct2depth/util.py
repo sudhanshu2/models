@@ -59,8 +59,7 @@ def load_image(img_file, resize=None, interpolation='linear'):
   """Load image from disk. Output value range: [0,1]."""
   #im_data = np.fromstring(gfile.Open(img_file).read(), np.uint8)
   image = cv2.imread(img_file)
-  im = cv2.imdecode(image, cv2.IMREAD_COLOR)
-  im = cv2.cvtColor(im, cv2.COLOR_BGR2RGB)
+  im = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
   if resize and resize != im.shape[:2]:
     ip = cv2.INTER_LINEAR if interpolation == 'linear' else cv2.INTER_NEAREST
     im = cv2.resize(im, resize, interpolation=ip)
